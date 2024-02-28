@@ -8,19 +8,14 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # Include directories
 include_directories(include)
 
-# Add your source files
-set(SOURCES
-    src/main.cpp
-)
+set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
+file(GLOB SOURCES ${SRC_DIR}/*.cpp)
 
-# Add your header files
-set(HEADERS
-    include/header.h
-)
+set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
+file(GLOB TESTS ${SRC_DIR}/*.cpp)
 
-set(TESTS
-    tests/test.cpp
-)
+set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
+file(GLOB HEADERS ${INCLUDE_DIR}/*.h ${INCLUDE_DIR}/*.hpp)
 
 # Add an executable target
 add_executable(${PROJECT_NAME} ${SOURCES} ${HEADERS} ${TESTS})

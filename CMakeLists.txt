@@ -9,10 +9,10 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 include_directories(include)
 
 set(SRC_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
-file(GLOB SOURCES ${SRC_DIR}/*.cpp)
+file(GLOB_RECURSE SOURCES ${SRC_DIR}/*.cpp)
 
 set(TEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/test)
-file(GLOB TESTS ${SRC_DIR}/*.cpp)
+file(GLOB_RECURSE TESTS ${SRC_DIR}/*.cpp)
 
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/include)
 file(GLOB HEADERS ${INCLUDE_DIR}/*.h ${INCLUDE_DIR}/*.hpp)
